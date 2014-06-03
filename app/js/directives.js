@@ -2,13 +2,31 @@
 
 /* Directives */
 
-
 angular.module('adminApp.directives', ['ngGrid']).
-  directive('dataGrid', function(version) {
-    return {
-    	restrict: "E",
-    	scope: {
-    		gridOptions: "=options"
-    	}
+  directive('grid', function() {
+  	var grid ={};
+  	grid.replace = 'true';
+  	grid.restrict = "E";
+  	grid.scope = {
+  		gridOptions:"=",
+  		getDataCommand: "=",
+  		saveChangesCommand: "="
+  	};
+  	grid.controller = function($scope){
+  		$scope.gridOptions.data = "data";
+
+  		$scope.saveChanges = function(){
+        	$scope.saveChangesCommand($scope.data);
+        	$scope.reloadSettings();
+      	};    
+
+      	$scope.reloadSettings = function(){
+      		$scope.data = $scope.getDataCommand();
+      	};
+
+      	$scope.reloadSettings();
     };
+
+    grid.templateUrl = 'partials/grid.html';
+  	return grid;
   });

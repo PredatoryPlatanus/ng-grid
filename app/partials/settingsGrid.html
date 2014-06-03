@@ -1,3 +1,4 @@
-<div class="gridStyle" ng-grid="gridOptions"></div>
-<button id="settings-save-btn" class="btn" ng-click="saveChanges()">Save</button>
-<button id="settings-reload-btn" class="btn" ng-click="reloadSettings()">Discard</button>
+<grid grid-options="gridOptions"
+	  get-data-command="getDataCommand"
+	  save-changes-command="saveChangesCommand">
+</grid>

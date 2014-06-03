@@ -10,6 +10,6 @@ angular.module('adminApp', [
   'adminApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/settingsGrid.html', controller: 'gridController'});
+  $routeProvider.when('/view1', {templateUrl: 'partials/settingsGrid.html', controller: 'settingsController'});
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
