@@ -3,9 +3,12 @@
 /* Directives */
 
 
-angular.module('adminApp.directives', []).
-  directive('appVersion', ['version', function(version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
+angular.module('adminApp.directives', ['ngGrid']).
+  directive('dataGrid', function(version) {
+    return {
+    	restrict: "E",
+    	scope: {
+    		gridOptions: "=options"
+    	}
     };
-  }]);
+  });

@@ -8,5 +8,18 @@
 angular.module('adminApp.services', ['ngResource']).
 	factory('Setting',['$resource',
   		function ($resource) {
-  			return $resource('json/settings.json');
-  			}]);
+  			return $resource('json/settings.json',{},
+  		     {saveList: {method: "PUT", isArray: true}});
+  			}]).
+	factory('gridTemplateSelector', function(dataType){
+		
+	}).
+	factory('settingsValidator', function(){
+		var validator = {};
+
+		validator.isValid = function(settings){
+			return true;
+		}
+
+		return validator;
+	});
