@@ -1,0 +1,23 @@
+[
+	{
+	 "id": 0,
+	 "settingKey": "RequestEditWarningText", 
+	 "value": "<p>You are about to request edits for this profile. Enter review comments below, then click Request Edits to proceed or Cancel to abort.</p>",
+	 "valueType":"Html"
+    },
+
+    {
+	 "id": 1,
+	 "settingKey": "CarryForwardArchiveFail", 
+	 "value": "The previous year's profile is already archived",
+	 "valueType": "String"
+    },
+
+    {
+	 "id": 1,
+	 "settingKey": "EmailNotify", 
+	 "value": "0",
+	 "valueType": "Bool"
+    }
+	
+]

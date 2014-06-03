@@ -2,10 +2,17 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+angular.module('adminApp.controllers', ['ngGrid'])
+  .controller('gridController', ['$scope','Setting', function($scope, Setting) {
+  	$scope.settingsData = Setting.query();
 
-  }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
+    $scope.gridOptions = { 
+    	data: 'settingsData', 
+    	enableCellSelection: true,
+        enableRowSelection: false,
+        enableCellEditOnFocus: true,
+        columnDefs: 
+        [{field: 'settingKey', displayName: 'Setting', enableCellEdit: false}, 
+         {field:'value', displayName:'', enableCellEdit: true, sortable: false}]};
 
   }]);
