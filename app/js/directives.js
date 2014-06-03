@@ -4,7 +4,7 @@
 
 angular.module('adminApp.directives', ['ngGrid']).
   directive('grid', function() {
-  	var grid ={};
+  	var grid = {};
   	grid.replace = 'true';
   	grid.restrict = "E";
   	grid.scope = {
@@ -12,21 +12,23 @@ angular.module('adminApp.directives', ['ngGrid']).
   		getDataCommand: "=",
   		saveChangesCommand: "="
   	};
+
   	grid.controller = function($scope){
   		$scope.gridOptions.data = "data";
 
   		$scope.saveChanges = function(){
         	$scope.saveChangesCommand($scope.data);
-        	$scope.reloadSettings();
+        	$scope.reloadData();
       	};    
 
-      	$scope.reloadSettings = function(){
+      	$scope.reloadData = function(){
       		$scope.data = $scope.getDataCommand();
       	};
 
-      	$scope.reloadSettings();
+      	$scope.reloadData();
     };
 
     grid.templateUrl = 'partials/grid.html';
+
   	return grid;
   });

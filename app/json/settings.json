@@ -18,6 +18,33 @@
 	 "settingKey": "EmailNotify", 
 	 "value": "0",
 	 "valueType": "Bool"
-    }
-	
+    },
+
+    {
+	 "id": 3,
+	 "settingKey": "CarryForwardNotEligible", 
+	 "value": "Profile isn't eligible for carryforward. Please contact national office administrator for further assistance",
+	 "valueType": "string"
+    },
+
+    {
+	 "id": 4,
+	 "settingKey": "LandingPage_SecurityLink", 
+	 "value": "http://www.deloitte.com/view/en_US/us/security/index.htm",
+	 "valueType": "Url"
+    },
+
+    {
+	 "id": 5,
+	 "settingKey": "AQM_DB_DATE_SQL_FORMAT", 
+	 "value": "MM/dd/yyyy",
+	 "valueType": "DateFormat"
+    },
+
+    {
+	 "id": 6,
+	 "settingKey": "ProfileNotExistError", 
+	 "value": "Profile with ID = {0} does not exist!",
+	 "valueType": "StringFormat"
+    }	
 ]
